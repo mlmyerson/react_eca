@@ -4,17 +4,22 @@ import styles from './Grid.module.css';
 interface GridProps {
   grid_width: number;
   grid_height: number;
+  cell_size: number;
 }
 
-export default function Grid({ grid_width, grid_height }: GridProps) {
+interface Cell {
+  color: string;
+}
+
+export default function Grid({ grid_width, grid_height, cell_size }: GridProps) {
   const [width, setWidth] = useState(grid_width);
   const [height, setHeight] = useState(grid_height);
-  const cells = Array.from({ length: width * height });
+  const [cellSize, setCellSize] = useState(cell_size);
 
-  useEffect(() => {
-    setWidth(grid_width);
-    setHeight(grid_height);
-  }, [grid_width, grid_height]);
+  //intialize cells
+ const cells: Cell[] = Array.from({ length: width * height }, () => ({
+    color: 'black',
+  }));
 
   return (
     <div
@@ -24,8 +29,15 @@ export default function Grid({ grid_width, grid_height }: GridProps) {
         '--rows': height,
       } as React.CSSProperties}
     >
-      {cells.map((_, idx) => (
-        <div className={styles.cell} key={idx} />
+      {cells.map((cell, i) => (
+        <div 
+          className={styles.cell} 
+          style={{ 
+            background: cell.color, 
+            width: `${cellSize}px`,
+            height: `${cellSize}px`
+          }} 
+          key={i} />
       ))}
     </div>
   );

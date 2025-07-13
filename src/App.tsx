@@ -6,10 +6,7 @@ export default function App(): JSX.Element {
 
   return (
     <>
-        <p>
-            Hello!
-        </p>
-        <Grid grid_width={100} grid_height={100}/>
+        <Grid grid_width={100} grid_height={100} cell_size={40}/>
     </>
   )
 }
