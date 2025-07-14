@@ -1,14 +1,12 @@
 .container {
   display: grid;
-  grid-template-columns: repeat(var(--columns), 1fr);
-  grid-template-rows: repeat(var(--rows), 1fr);
-  gap: 2px;
   border: 1px solid #ccc;
-  width: 400px;
-  height: 400px;
+  width: 100vw;
+  height: 100vh;
 }
 .cell {
   background: #eee;
   border: 1px solid #aaa;
-  aspect-ratio: 1 / 1;
+  box-sizing: border-box;
+  aspect-ratio: 1/1;
 }
