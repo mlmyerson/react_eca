@@ -22,13 +22,19 @@ export default function SettingsMenu() {
             </p>
             <List className={"controls_list"}>
                 <ListItem>
-                    <TextField id="outlined-basic" label="ECA #" variant="outlined" />
+                    <TextField fullWidth className={"control"} id="outlined-basic" label="ECA #" variant="outlined" />
                 </ListItem>
                 <ListItem>
-                    <TextField id="outlined-basic" label="Initial Condition (Little-Endian #)" variant="outlined" />
+                    <TextField fullWidth className={"control"} id="outlined-basic" label="Grid Width" variant="outlined" />
                 </ListItem>
                 <ListItem>
-                    <Button onClick={toggleDrawer}>Apply</Button>
+                    <TextField fullWidth className={"control"} id="outlined-basic" label="Grid Height" variant="outlined" />
+                </ListItem>
+                <ListItem>
+                    <TextField fullWidth className={"control"} id="outlined-basic" label="Initial Condition (Little-Endian #)" variant="outlined" />
+                </ListItem>
+                <ListItem>
+                    <Button fullWidth className={"control"} onClick={toggleDrawer}>Apply</Button>
                 </ListItem>
             </List>
         </div>

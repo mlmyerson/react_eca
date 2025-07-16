@@ -1,0 +1,2 @@
+make settings menu centered on screen, but with transparent sides so the drawer coming down is small and compact
+make the grid zoomable. if you zoom out too far, the grid should get smaller without adding more cells
